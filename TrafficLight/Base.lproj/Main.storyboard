@@ -22,16 +22,19 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="JLg-2z-1Hw">
                                         <rect key="frame" x="0.0" y="0.0" width="84" height="292"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WB4-9O-z4Z">
+                                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WB4-9O-z4Z">
                                                 <rect key="frame" x="0.0" y="0.0" width="84" height="85"/>
                                                 <color key="backgroundColor" red="1" green="0.0" blue="0.024480011906430121" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DhG-wz-u5y">
+                                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DhG-wz-u5y">
                                                 <rect key="frame" x="0.0" y="103" width="84" height="86"/>
                                                 <color key="backgroundColor" red="1" green="0.97559760620000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="tintColor" red="1" green="0.97559760615223745" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="86" id="4OW-JH-MKH"/>
+                                                </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DUO-3T-F2A">
+                                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DUO-3T-F2A">
                                                 <rect key="frame" x="0.0" y="207" width="84" height="85"/>
                                                 <color key="backgroundColor" red="0.0" green="1" blue="0.013963865739999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="tintColor" red="1" green="0.97559760620000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -40,12 +43,16 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="292" id="6Zs-xv-l1g"/>
                                             <constraint firstAttribute="width" constant="84" id="O3M-Vt-Ht0"/>
+                                            <constraint firstItem="DhG-wz-u5y" firstAttribute="centerY" secondItem="JLg-2z-1Hw" secondAttribute="centerY" id="rUp-7f-8bD"/>
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCS-Ne-loC">
                                         <rect key="frame" x="8.6666666666666572" y="333" width="66.666666666666671" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="button"/>
+                                        <connections>
+                                            <action selector="TrafficButtonDidTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="nWm-ul-7NQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <variation key="heightClass=compact-widthClass=compact" axis="horizontal"/>
@@ -53,21 +60,27 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="separatorColor"/>
                         <constraints>
                             <constraint firstItem="Xgs-fJ-acu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="GpA-Z0-d37"/>
                             <constraint firstItem="Xgs-fJ-acu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZaX-bY-ast"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="greenLightView" destination="DUO-3T-F2A" id="4gu-rY-nF1"/>
+                        <outlet property="redLightView" destination="WB4-9O-z4Z" id="cpX-cJ-6uG"/>
+                        <outlet property="trafficLightButton" destination="mCS-Ne-loC" id="u5V-DY-jqh"/>
+                        <outlet property="yellowLightView" destination="DhG-wz-u5y" id="XRZ-jC-owZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130.43478260869566" y="98.641304347826093"/>
+            <point key="canvasLocation" x="130.37383177570092" y="98.488120950323975"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
