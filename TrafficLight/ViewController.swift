@@ -9,7 +9,6 @@ import UIKit
 
 class ViewController: UIViewController {
     var count = 1
-    var colors : [Bool] = [false, false, true]
     @IBOutlet var redLightView: UIView!
     @IBOutlet var greenLightView: UIView!
     @IBOutlet var yellowLightView: UIView!
